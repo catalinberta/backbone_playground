@@ -1,0 +1,11 @@
+{
+	"name": "Catalin",
+	"version": "1.0",
+	"main": ["js/main"],
+	"dependencies": {
+		"jquery": null,
+		"backbone-amd": null,
+		"underscore-amd": null,
+		"requirejs": null	
+	}
+}
