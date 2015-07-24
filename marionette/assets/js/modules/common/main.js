@@ -1,28 +1,63 @@
+var App = new Backbone.Marionette.Application();
 
+App.addRegions({
+  mainRegion: "#layout_view"
+});
 
-var Controller = Marionette.Controller.extend({
+var RouterController = Marionette.Controller.extend({
 	index: function() {
-		console.log(2)
+		layoutView.mainView.show(miniView)
+		console.log('mini view')
 	}
-})
+});
 
-var controller = new Controller()
+var routeController = new RouterController()
 
-var Router = Backbone.Marionette.AppRouter.extend({
-	controller: controller,
-
-	routes: {
-		"test" : "index"
-	},
+var Router = Marionette.AppRouter.extend({
+	controller: routeController,
 
 	appRoutes: {
 		"test" : "index"
 	},
-	
-
-	index: function() {
-		console.log(1)
-	}
-})
+});
 
 var router = new Router();
+
+
+LayoutView = Marionette.LayoutView.extend({
+	tagName: 'div',
+	id: 'main',
+	template: '#layout_view_template',
+	regions: {
+		'mainView': '#view'
+	},
+
+	initialize: function() {
+		this.initRouter();
+		
+	},
+
+	initRouter: function() {
+		var Router = Marionette.AppRouter.extend({
+			AppRouter: {
+				test: 'test'
+			},
+			controller: 'routeController'
+		})
+	},
+
+	onRender: function() {
+		if(!Backbone.History.started) Backbone.history.start();
+	}
+});
+
+var layoutView = new LayoutView(); 
+
+App.mainRegion.show(layoutView);
+
+MiniView = Marionette.LayoutView.extend({
+	tagName: 'div',
+	template: '#mini_view'
+});
+
+var miniView = new MiniView(); 
