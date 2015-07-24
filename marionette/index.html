@@ -7,7 +7,9 @@
 		<link href="./assets/css/application.css" rel="stylesheet">
 	</head>
 	<body>
-		<div id="layout_view"></div>
+		<div id="layout_view" class="container"></div>
+
+
 		<script id="layout_view_template" type="text/template">
 			<div class="navbar navbar-inverse navbar-fixed-top">
 				<div class="navbar-inner">
@@ -15,27 +17,45 @@
 						<span class="brand">Marionette playground</span>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			
-			<div id="view">Default text</div>
+			<div id="view"></div>
 		</script>
-		<script id="mini_view" type="text/template">
-			mini view here
+		<script id="home_view" type="text/template">
+			home view here
 		</script>
-		
-
-
+		<script id="about_view" type="text/template">
+			about view here
+		</script>
+		<script id="contact_view" type="text/template">
+			contact view here
+		</script>
 		<script src="./assets/js/vendor/underscore.js"></script>
 		<script src="./assets/js/vendor/jquery.js"></script>
 		<script src="./assets/js/vendor/json2.js"></script>
 		<script src="./assets/js/vendor/backbone.js"></script>
 		<script src="./assets/js/vendor/backbone.wreqr.js"></script>
 		<script src="./assets/js/vendor/backbone.marionette.js"></script>
+
+		<script type="text/javascript">
+			var App = new Backbone.Marionette.Application();
+			App.Routes = App.Routes || {};
+			App.Controllers = App.Controllers || {};
+			App.Models = App.Models || {};
+			App.Views = App.Views || {};
+		</script>
+
+		<script src="./assets/js/modules/home/views.js"></script>
+		<script src="./assets/js/modules/home/controllers.js"></script>
+		<script src="./assets/js/modules/home/main.js"></script>
+		<script src="./assets/js/modules/common/controllers.js"></script>
+		<script src="./assets/js/modules/common/views.js"></script>
 		<script src="./assets/js/modules/common/main.js"></script>
+
+
 	</body>
 </html>
