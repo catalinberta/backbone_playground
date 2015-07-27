@@ -14,10 +14,10 @@
 			<div class="navbar navbar-inverse navbar-fixed-top">
 				<div class="navbar-inner">
 					<div class="container">
-						<span class="brand">Marionette playground</span>
+						<span class="brand">BackboneJS & MarionetteJS</span>
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#about">About</a></li>
+							<li><a href="#services">services</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</div>
@@ -26,18 +26,25 @@
 			<div id="view"></div>
 		</script>
 		<script id="home_view" type="text/template">
-			home view here
+			<h3>Homepage</h3>
 		</script>
-		<script id="about_view" type="text/template">
-			about view here
+		<script id="services_view" type="text/template">
+			<h3>Services</h3>
+			<div id="table"></div>
+		</script>
+		<script id="service_item_template" type="text/template">
+			<td><%= name %></td>
+			<td><%= description %></td>
 		</script>
 		<script id="contact_view" type="text/template">
-			contact view here
+			<h3>Contact us</h3>
 		</script>
 		<script src="./assets/js/vendor/underscore.js"></script>
 		<script src="./assets/js/vendor/jquery.js"></script>
 		<script src="./assets/js/vendor/json2.js"></script>
+
 		<script src="./assets/js/vendor/backbone.js"></script>
+		<script src="./assets/js/vendor/backbone.babysitter.js"></script>
 		<script src="./assets/js/vendor/backbone.wreqr.js"></script>
 		<script src="./assets/js/vendor/backbone.marionette.js"></script>
 
@@ -52,10 +59,14 @@
 		<script src="./assets/js/modules/home/views.js"></script>
 		<script src="./assets/js/modules/home/controllers.js"></script>
 		<script src="./assets/js/modules/home/main.js"></script>
+		<script src="./assets/js/modules/services/views.js"></script>
+		<script src="./assets/js/modules/services/models.js"></script>
+		<script src="./assets/js/modules/services/main.js"></script>
+		<script src="./assets/js/modules/contact/views.js"></script>
+		<script src="./assets/js/modules/contact/controllers.js"></script>
+		<script src="./assets/js/modules/contact/main.js"></script>
 		<script src="./assets/js/modules/common/controllers.js"></script>
 		<script src="./assets/js/modules/common/views.js"></script>
 		<script src="./assets/js/modules/common/main.js"></script>
-
-
 	</body>
 </html>

@@ -7,11 +7,12 @@ App.Views.LayoutView = Marionette.LayoutView.extend({
 	},
 
 	initialize: function() {
+		
 		this.initRouter();
 	},
 
 	initRouter: function() {
-
+		
 		var capturedThis = this;
 
 		var Router = Marionette.AppRouter.extend({});
@@ -19,7 +20,7 @@ App.Views.LayoutView = Marionette.LayoutView.extend({
 		var appRouter = new Router({
 			appRoutes: {
 				'' : 'home',
-				'about' : 'about',
+				'services' : 'services',
 				'contact' : 'contact'
 			}, 
 			controller: App.Routes.routerController
@@ -33,14 +34,4 @@ App.Views.LayoutView = Marionette.LayoutView.extend({
 		
 	},
 
-});
-
-App.Views.AboutView = Marionette.LayoutView.extend({
-	tagName: 'div',
-	template: '#about_view'
-});
-
-App.Views.ContactView = Marionette.LayoutView.extend({
-	tagName: 'div',
-	template: '#contact_view'
 });
