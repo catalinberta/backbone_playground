@@ -1,13 +1,17 @@
+App.Views.MainMenu = Marionette.LayoutView.extend({
+	tagName: 'div',
+	template: '#main_menu'
+})
 App.Views.LayoutView = Marionette.LayoutView.extend({
 	tagName: 'div',
 	id: 'main',
 	template: '#layout_view_template',
 	regions: {
+		'mainMenu': '#menu',
 		'mainView': '#view'
 	},
 
 	initialize: function() {
-		
 		this.initRouter();
 	},
 
@@ -31,7 +35,8 @@ App.Views.LayoutView = Marionette.LayoutView.extend({
 
 	onRender: function() {
 		if(!Backbone.History.started) Backbone.history.start();
-		
-	},
+		layoutView.mainMenu.show(new App.Views.MainMenu())	
+	}
 
 });
+
