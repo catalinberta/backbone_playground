@@ -29,17 +29,23 @@
 		</script>
 		<script id="home_view" type="text/template">
 			<h3>Homepage</h3>
+			<p>You are viewing the Homepage.</p>
+		</script>
+		<script id="user_view" type="text/template">
+			<h3>User Page</h3>
+			<div id="user_info"></div>
 		</script>
 		<script id="services_view" type="text/template">
 			<h3>Services</h3>
 			<div id="table"></div>
 		</script>
 		<script id="service_item_template" type="text/template">
-			<td><%= name %></td>
+			<td><a href=""><%= name %></a></td>
 			<td><%= description %></td>
 		</script>
 		<script id="contact_view" type="text/template">
 			<h3>Contact us</h3>
+			<p>Contact us man!</p>
 		</script>
 		<script src="./assets/js/vendor/underscore.js"></script>
 		<script src="./assets/js/vendor/jquery.js"></script>
@@ -67,6 +73,9 @@
 		<script src="./assets/js/modules/contact/views.js"></script>
 		<script src="./assets/js/modules/contact/controllers.js"></script>
 		<script src="./assets/js/modules/contact/main.js"></script>
+		<script src="./assets/js/modules/user/views.js"></script>
+		<script src="./assets/js/modules/user/models.js"></script>
+		<script src="./assets/js/modules/user/main.js"></script>
 		<script src="./assets/js/modules/common/controllers.js"></script>
 		<script src="./assets/js/modules/common/views.js"></script>
 		<script src="./assets/js/modules/common/main.js"></script>

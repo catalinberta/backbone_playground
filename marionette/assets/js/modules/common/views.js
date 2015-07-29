@@ -1,6 +1,14 @@
 App.Views.MainMenu = Marionette.LayoutView.extend({
 	tagName: 'div',
-	template: '#main_menu'
+	template: '#main_menu',
+	events: {
+		"click ul li a": "updateMenuState"
+	},
+	updateMenuState: function(el) {
+		var thisEl = $(el.currentTarget);
+		$('#menu ul li').removeClass();
+		thisEl.parent().addClass('active');
+	}
 })
 App.Views.LayoutView = Marionette.LayoutView.extend({
 	tagName: 'div',
@@ -25,7 +33,8 @@ App.Views.LayoutView = Marionette.LayoutView.extend({
 			appRoutes: {
 				'' : 'home',
 				'services' : 'services',
-				'contact' : 'contact'
+				'contact' : 'contact',
+				'user/:id' : 'user'
 			}, 
 			controller: App.Routes.routerController
 		});
